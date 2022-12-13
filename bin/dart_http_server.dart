@@ -11,6 +11,11 @@ void main() async {
     print("path: ${request.uri.path}");
     print("http host: ${request.headers.host}");
     print("http port: ${request.headers.port}");
+    try {
+      print("requested uri: ${request.requestedUri}");
+    } catch (e) {
+      print("requested uri: $e");
+    }
 
     request.response.close();
   }
